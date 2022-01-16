@@ -22,18 +22,26 @@ const Form = ({title, setContacts, contacts}) => {
     }
   }
 
-  const submitContact = e => {
-    e.preventDefault();
-    
-    if (name.trim() === '') {
+  const checkContact = (e) => {
+    if(contacts.some(e => e.name === name)) {
+      alert('Контакт уже существует')
+    } else if (name.trim() === '') {
       alert ('Пустой поле Name')
     } else if (number.trim() === '') {
       alert ('Пустое поле Tel')
-    } else {addContact({id: nanoid(), name, number})}
+    } else { addContact({ id: nanoid(), name, number }) }
+    
+  }
+
+  const submitContact = e => {
+    e.preventDefault();
+
+    checkContact(e)
   }
 
 
-  return <div>
+
+  return <>
     <h1>{title}</h1>
 
     <form className="form">
@@ -65,7 +73,7 @@ const Form = ({title, setContacts, contacts}) => {
       Add contact
     </button>
   </form>
-  </div>
+  </>
 }
 
 export default Form;

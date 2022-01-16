@@ -6,7 +6,7 @@ const Contacts = ({ title, contacts, setContacts }) => {
   };
 
   return (
-    <div>
+    <>
       <h1>{title}</h1>
       <ul className="contacts">
       {contacts.map((el) => {
@@ -27,7 +27,7 @@ const Contacts = ({ title, contacts, setContacts }) => {
         );
       })}
     </ul>
-    </div>
+    </>
   );
 };
 
