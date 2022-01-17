@@ -32,8 +32,9 @@ const Contacts = ({ title, contacts, setContacts }) => {
 };
 
 Contacts.propTypes = {
+  title: PropTypes.string,
   contacts: PropTypes.array,
-  OnDeleteItem: PropTypes.func,
+  setContacts: PropTypes.func,
 };
 
 export default Contacts;
